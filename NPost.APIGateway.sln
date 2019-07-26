@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5D6CA23-23D1-43DC-A49D-BB9C4E7B9BA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPost.APIGateway", "src\NPost.APIGateway\NPost.APIGateway.csproj", "{368A6EFF-6D3F-432D-BC58-004872D9BD5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Debug|x64.Build.0 = Debug|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Debug|x86.Build.0 = Debug|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Release|x64.ActiveCfg = Release|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Release|x64.Build.0 = Release|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Release|x86.ActiveCfg = Release|Any CPU
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{368A6EFF-6D3F-432D-BC58-004872D9BD5C} = {F5D6CA23-23D1-43DC-A49D-BB9C4E7B9BA0}
+	EndGlobalSection
+EndGlobal

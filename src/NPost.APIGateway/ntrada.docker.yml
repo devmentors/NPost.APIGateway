@@ -1,0 +1,37 @@
+use_error_handler: true
+use_forwarded_headers: true
+pass_query_string: true
+modules_path: Modules
+forward_request_headers: true
+forward_response_headers: true
+generate_request_id: true
+generate_trace_id: true
+use_local_url: true
+load_balancer:
+  enabled: true
+  url: fabio:9999
+
+resource_id:
+  property: id
+  generate: true
+
+cors:
+  enabled: true
+  headers:
+    - Request-ID
+    - Resource-ID
+    - Trace-ID
+    - Total-Count
+
+http:
+  retries: 2
+  interval: 2.0
+  exponential: true
+
+modules:
+  - name: home
+    routes:
+      - upstream: /
+        method: GET
+        use: return_value
+        return_value: Welcome to NPost API Gateway!
