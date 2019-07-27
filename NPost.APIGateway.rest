@@ -1,0 +1,53 @@
+@url = http://localhost:5000
+@parcelId = 00000000-0000-0000-0000-000000000000
+@deliveryId = 00000000-0000-0000-0000-000000000000
+@parcels =  ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000']
+@addresses = ['Street 1', 'Downtown 2', 'Crossing 3']
+
+### Add a parcel
+POST {{url}}/parcels
+Content-Type: application/json
+
+{
+  "size": "normal",
+  "name": "Parcel #1",
+  "address": "Street 1"
+}
+
+### Browse parcels
+GET {{url}}/parcels?size=normal&status=new
+
+### Get parcel details
+GET {{url}}/parcels/{{parcelId}}
+
+### Delete a parcel
+DELETE {{url}}/parcels/{{parcelId}}
+
+### Start the delivery
+POST {{url}}/deliveries
+Content-Type: application/json
+
+{
+  "parcels": {{parcels}}
+}
+
+### Get the delivery details
+GET {{url}}/deliveries/{{deliveryId}}
+
+### Complete the delivery
+POST {{url}}/deliveries/{{deliveryId}}/complete
+Content-Type: application/json
+
+{
+}
+
+### Fail the delivery
+POST {{url}}/deliveries/{{deliveryId}}/fail
+Content-Type: application/json
+
+{
+  "reason": "Lost parcels."
+}
+
+### Get the route
+GET {{url}}/routing?addresses={{addresses}}

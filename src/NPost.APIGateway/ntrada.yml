@@ -11,10 +11,6 @@ load_balancer:
   enabled: false
   url: localhost:9999
 
-resource_id:
-  property: id
-  generate: true
-
 cors:
   enabled: true
   headers:

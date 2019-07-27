@@ -1,0 +1,13 @@
+name: Routing
+path: /routing
+
+routes:
+  - upstream: /
+    method: GET
+    use: downstream
+    downstream: routing-service/route
+
+services:
+  routing-service:
+    local_url: localhost:5003
+    url: load_balancer/routing-service

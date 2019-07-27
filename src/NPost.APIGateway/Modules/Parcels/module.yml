@@ -1,0 +1,32 @@
+name: Parcels
+path: /parcels
+
+
+routes:
+- upstream: /
+  method: GET
+  use: downstream
+  downstream: parcels-service/parcels
+
+- upstream: /{parcelId}
+  method: GET
+  use: downstream
+  downstream: parcels-service/parcels/{parcelId}
+
+- upstream: /
+  method: POST
+  use: downstream
+  downstream: parcels-service/parcels
+  resource_id:
+    property: parcelId
+    generate: true
+
+- upstream: /{parcelId}
+  method: DELETE
+  use: downstream
+  downstream: parcels-service/parcels/{parcelId}
+  
+services:
+  parcels-service:
+    local_url: localhost:5002
+    url: load_balancer/parcels-service

@@ -1,0 +1,35 @@
+name: Parcels
+path: /deliveries
+
+routes:
+- upstream: /{deliveryId}
+  method: GET
+  use: downstream
+  downstream: deliveries-service/deliveries/{deliveryId}
+
+- upstream: /
+  method: POST
+  use: downstream
+  downstream: deliveries-service/deliveries
+  resource_id:
+    property: deliveryId
+    generate: true
+
+- upstream: /{deliveryId}/complete
+  method: POST
+  use: downstream
+  downstream: deliveries-service/deliveries/{deliveryId}/complete
+  bind:
+    - deliveryId:{deliveryId}
+
+- upstream: /{deliveryId}/fail
+  method: POST
+  use: downstream
+  downstream: deliveries-service/deliveries/{deliveryId}/fail
+  bind:
+    - deliveryId:{deliveryId}
+ 
+services:
+  deliveries-service:
+    local_url: localhost:5001
+    url: load_balancer/deliveries-service
