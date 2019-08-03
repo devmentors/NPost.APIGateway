@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Ntrada;
+using Ntrada.Hooks;
 
 namespace NPost.APIGateway
 {
@@ -10,9 +12,9 @@ namespace NPost.APIGateway
         public static async Task Main(string[] args)
             => await WebHost.CreateDefaultBuilder(args)
                 .ConfigureServices(services => services
-                    .AddNtrada())
-                .Configure(app => app
-                    .UseNtrada())
+                    .AddNtrada()
+                    .AddSingleton<IBeforeHttpClientRequestHook, CorrelationContextHttpHook>())
+                .Configure(app => app.UseNtrada())
                 .Build()
                 .RunAsync();
     }
