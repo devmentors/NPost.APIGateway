@@ -8,4 +8,5 @@ WORKDIR /app
 COPY --from=build /app/src/NPost.APIGateway/out .
 ENV ASPNETCORE_URLS http://*:5000
 ENV ASPNETCORE_ENVIRONMENT docker
+ENV NTRADA_CONFIG ntrada.docker
 ENTRYPOINT dotnet NPost.APIGateway.dll

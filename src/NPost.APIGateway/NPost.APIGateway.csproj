@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Convey.Logging" Version="0.0.*" />
     <PackageReference Include="Ntrada_" Version="1.2.4" />
   </ItemGroup>
 
@@ -17,10 +18,9 @@
     <Content Include="ntrada.docker.yml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Modules" />
+    <None Include="Modules\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   
 </Project>

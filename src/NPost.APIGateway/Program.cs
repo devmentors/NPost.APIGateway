@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Convey.Logging;
 using Ntrada;
 using Ntrada.Hooks;
 
@@ -15,6 +16,7 @@ namespace NPost.APIGateway
                     .AddNtrada()
                     .AddSingleton<IBeforeHttpClientRequestHook, CorrelationContextHttpHook>())
                 .Configure(app => app.UseNtrada())
+                .UseLogging()
                 .Build()
                 .RunAsync();
     }
